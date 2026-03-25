@@ -1,0 +1,21 @@
+{
+    "manifest_version": 3,
+    "name": "YouTube videos Auto Pause/Resume",
+    "version": "1.0",
+    "description": "Pauses YouTube videos when you leave the tab or Chrome and resumes them when you return, with a toggle button to enable/disable the feature.",
+    "permissions": [
+      "storage"
+    ],
+    "action": {
+      "default_popup": "popup.html",
+      "default_title": "Auto Pause/Resume Toggle"
+    },
+    "content_scripts": [
+      {
+        "matches": ["*://*.youtube.com/*"],
+        "js": ["content.js"],
+        "run_at": "document_idle"
+      }
+    ]
+  }
+  
